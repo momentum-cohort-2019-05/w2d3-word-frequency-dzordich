@@ -40,7 +40,7 @@ def print_word_freq(file):
 
     #prints out the list of words, in order, with each word's frequency next to it
     for i in list_in_order:
-        print(i, "  |  ", count_data[i], ("*" * count_data[i]))
+        print(i, (" ")*(9 - len(i)), "  |    ", count_data[i], ("*" * count_data[i]))
         if list_in_order.index(i) == 9:
             break
 
@@ -58,6 +58,4 @@ if __name__ == "__main__":
 
     file = open(Path(args.file))
     print_word_freq(file)
-    # else:
-    #     print(f"{file} does not exist!")
-    #     exit(1)
+
