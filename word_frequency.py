@@ -64,4 +64,5 @@ if __name__ == "__main__":
         exit()
     file = open(Path(args.file))
     print_word_freq(file)
+    file.close()
 
