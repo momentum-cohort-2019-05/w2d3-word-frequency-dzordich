@@ -55,7 +55,13 @@ if __name__ == "__main__":
         description='Get the word frequency in a text file.')
     parser.add_argument('file', help='file to read')
     args = parser.parse_args()
-
+    #checks if file exists, exits program if it does not
+    try:
+        f = open(Path(args.file))
+        f.close()
+    except FileNotFoundError:
+        print("File does not exist!")
+        exit()
     file = open(Path(args.file))
     print_word_freq(file)
 
